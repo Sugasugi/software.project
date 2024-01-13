@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Website</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-image: url('background.jpg');
+       
+           
+            animation: changeBackground 20s linear infinite alternate; /* Background animation */
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.5);
+            color: #fff;
+            text-align: center;
+            padding: 2em;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        .planet-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .planet {
+            border-radius: 50%;
+            position: absolute;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        /* Additional styles for planet information */
+        .planet-info {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .planet-info .planet-card {
+            flex: 0 0 calc(33.33% - 20px);
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2em;
+            position: relative;
+            animation: changeColor 5s linear infinite alternate; /* Color-changing animation */
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background-image: url('images1.jpeg');
+            }
+            25% {
+                background-image: url('images2.jpeg');
+            }
+            50% {
+                background-image: url('images3.jpeg');
+            }
+            75% {
+                background-image: url('images4.jpeg');
+            }
+            100% {
+                background-image: url('images5.jpeg');
+            }
+        }
+
+        @keyframes changeColor {
+            0% {
+                background-color: #FFCCCC; /* Light red */
+            }
+            25% {
+                background-color: #FFCC99; /* Light orange */
+            }
+            50% {
+                background-color: #FFFF99; /* Light yellow */
+            }
+            75% {
+                background-color: #CCFFCC; /* Light green */
+            }
+            100% {
+                background-color: #CCCCFF; /* Light blue */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Explore the Wonders of the Universe</h1>
+        <div class="planet-container">
+            <div class="planet mercury"></div>
+            <div class="planet venus"></div>
+            <div class="planet earth"></div>
+            <div class="planet mars"></div>
+            <div class="planet jupiter"></div>
+            <div class="planet saturn"></div>
+            <div class="planet uranus"></div>
+            <div class="planet neptune"></div>
+        </div>
+    </header>
+
+    <h1 style="text-align: center; margin-top: 20px;">Our Beloved Solar System</h1>
+
+    <div class="planet-info">
+        <div class="planet-card mercury-card">
+            <h2>Mercury</h2>
+            <p>Mercury is the smallest and innermost planet in the Solar System. It is named after the Roman god of commerce and messenger to the gods.The closest planet to the Sun does indeed have ice on its surface. That sounds surprising at first glance, but the ice is found in permanently shadowed craters — those that never receive any sunlight. It is thought that perhaps comets delivered this ice to Mercury in the first place. In fact, NASA’s MESSENGER spacecraft not only found ice at the north pole, but it also found organics, which are the building blocks for life. Mercury is way too hot and airless for life as we know it, but it shows how these elements are distributed across the Solar System.</p>
+        </div>
+
+        <div class="planet-card venus-card">
+            <h2>Venus</h2>
+            <p>Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty.oth Mercury and Venus have no moons, which can be considered a surprise given there are dozens of other ones around the Solar System. Saturn has over 60, for example. And some moons are little more than captured asteroids, which may have been what happened with Mars’ two moons, for example. So what makes these planets different? No one is really sure why Venus doesn’t, but there is at least one stream of research that suggests it could have had one in the past.</p>
+        </div>
+
+        <div class="planet-card earth-card">
+            <h2>Earth</h2>
+            <p>Earth is the third planet from the Sun and the only astronomical object known to harbor life. It is home to a diverse range of life forms.We have a magnetic field surrounding our planet that protects us from the blasts of radiation and particles the Sun sends our way. Good thing, too, because such flare-ups could prove deadly to unprotected people; that’s why NASA keeps an eye on solar activity for astronauts on the International Space Station, for example. At any rate, when you see auroras shining in the sky, that’s what happens when the particles from the Sun flow along the magnetic field lines and interact with Earth’s upper atmosphere.</p>
+        </div>
+
+        <div class="planet-card mars-card">
+            <h2>Mars</h2>
+            <p>Mars is the fourth planet from the Sun. It is often called the 'Red Planet' due to its reddish appearance.What a bunch of contrasts in the inner Solar System: practically atmosphere-less Mercury, a runaway hothouse greenhouse effect happening in Venus’ thick atmosphere, temperate conditions on much of Earth and then a thin atmosphere on Mars. But look at the planet and you can see gullies carved in the past from probable water. Water requires more atmosphere, so Mars had more in the past. Where did it go? Some scientists believe it’s because the Sun’s energy pushed the lighter molecules out of Mars atmosphere over millions of years, decreasing the thickness over time'</p>
+        </div>
+
+        <div class="planet-card jupiter-card">
+            <h2>Jupiter</h2>
+            <p>Jupiter is the largest planet in the Solar System. It is a gas giant with a strong magnetic field and numerous moons.The most massive planet in the Solar System probably had a huge influence on its history. At 318 times the mass of Earth, you can imagine that any passing asteroid or comet going near Jupiter has a big chance of being caught or diverted. Maybe Jupiter was partly to blame for the great bombardment of small bodies that peppered our young Solar System early in its history, causing scars you can still see on the Moon today. And in 1994, astronomers worldwide were treated to a rare sight: a comet, Shoemaker-Levy 9, breaking up under Jupiter’s gravity and slamming into the atmosphere.
+
+            </p>
+        </div>
+
+        <div class="planet-card saturn-card">
+            <h2>Saturn</h2>
+            <p>Saturn is known for its prominent ring system composed of ice particles, dust, and small rocky objects.There’s a field of ice and rock debris circling Saturn that from afar, appear as rings. Early telescope observations of the planet in the 1600s caused some confusion: does that planet have ears, or moons, or what? With better resolution, however, it soon became clear that there was a chain of small bodies encircling the gas giant. It’s possible that a single moon tore apart under Saturn’s strong gravity and produced the rings. Or, maybe they’ve been around (pun intended) for the last few billion years, unable to coalesce into a larger body but resistant enough to gravity not to break up.
+
+            </p>
+        </div>
+
+        <div class="planet-card uranus-card">
+            <h2>Uranus</h2>
+            <p>Uranus is a gas giant with a unique rotation, and it is the only planet that rotates on its side.When Voyager 2 flew by the planet in the 1980s, scientists saw a mostly featureless blue ball and some assumed there wasn’t much activity going on on Uranus. We’ve had a better look at the data since then that does show some interesting movement in the southern hemisphere. Additionally, the planet drew closer to the Sun in 2007, and in more recent years telescope probing has shown some storms going on. What is causing all this activity is difficult to say unless we were to send another probe that way. And unfortunately, there are no missions yet that are slated for sure to zoom out to that part of the Solar System.
+
+            </p>
+        </div>
+
+        <div class="planet-card neptune-card">
+            <h2>Neptune</h2>
+            <p>Neptune is the eighth and farthest known planet from the Sun in the Solar System. It is a blue giant, similar to Uranus.While on Earth we are concerned about hurricanes, the strength of these storms is nowhere near what you would find on Neptune. At its highest altitudes, according to NASA, winds blow at more than 1,100 miles per hour (1,770 kilometers per hour). To put that in context, that’s faster than the speed of sound on Earth, at sea level. Why Neptune is so blustery is a mystery, especially considering the Sun’s heat is so little at its distance.</p>
+        </div>
+    </div>
+</body>
+</html>

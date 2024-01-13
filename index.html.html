@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Website</title>
+    <style> 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');5
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(51, 51, 51, 0.5); /* Transparent dark gray */
+            color: #fff;
+            text-align: center;
+            padding: 2em;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5em; /* Larger font size */
+        }
+
+        .planet-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            animation: movePlanets 20s linear infinite;
+        }
+
+        .planet {
+            border-radius: 50%;
+            position: absolute;
+            animation-duration: 10s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .mercury { width: 75px; height: 75px; background: url('mercury.jpeg') no-repeat center center; background-size: cover; left: 13%; animation-name: mercuryOrbit; }
+        .venus { width: 125px; height: 125px; background: url('venus.jpg') no-repeat center center; left: 20%; animation-name: venusOrbit; }
+        .earth { width: 165px; height: 165px; background: url('earth.jpeg') no-repeat center center; background-size: cover; left: 30%; animation-name: earthOrbit; }
+        .mars { width: 100px; height: 100px; background: url('mars.jpeg') no-repeat center center; left: 40%; animation-name: marsOrbit; }
+        .jupiter { width: 180px; height: 180px;background: url('jupiter.jpg') no-repeat center center; left: 47%; animation-name: jupiterOrbit; }
+        .saturn { width: 125px; height: 125px;background: url('saturn.jpg') no-repeat center center;; left: 60%; animation-name: saturnOrbit; }
+        .saturn::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 180px; height: 5px; background-color: #8b4513; border-radius: 10px; }
+        .uranus { width: 140px; height: 140px; background: url('uranus.jpg') no-repeat center center; left: 70%; animation-name: uranusOrbit; }
+        .neptune { width: 135px; height: 135px; background: url('neptune.jpeg') no-repeat center center; left: 80%; animation-name: neptuneOrbit; }
+
+        @keyframes movePlanets {
+            0% { bottom: 0; }
+            50% { bottom: 20px; }
+            100% { bottom: 0; }
+        }
+
+        @keyframes mercuryOrbit {b from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes venusOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes earthOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes marsOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes jupiterOrbit { from { transformb: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes saturnOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes uranusOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes neptuneOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        .card-container {
+            display: flex;
+            justify-content: space-around; /* Adjust as needed for spacing */
+            flex-wrap: wrap;
+            margin: 200px;
+        }
+
+        .card {
+            flex: 0 0 calc(50% - 20px); /* Two cards per row, adjust for spacing */
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 2em;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        a {
+            color: #4285f4;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore the Wonders of the Universe</h1>
+        <div class="planet-container">
+            <div class="planet mercury"></div>
+            <div class="planet venus"></div>
+            <div class="planet earth"></div>
+            <div class="planet mars"></div>
+            <div class="planet jupiter"></div>
+            <div class="planet saturn"></div>
+            <div class="planet uranus"></div>
+            <div class="planet neptune"></div>
+        </div>
+    </header>
+
+    <div class="card-container">
+        <div class="card">
+            <h2>Welcome to Our Astronomy Website</h2>
+            <p>Discover the beauty and mysteries of the cosmos with our astronomy resources. From stars and galaxies to the latest astronomical discoveries, we've got you covered.</p>
+            <p>Let us take you with us to explore live stars!</p>
+            <a href="https://www3.nasa.gov/skymap/full/"><strong>Live Now!</strong></a>
+        </div>
+
+    <div class="card" id="learn-more">
+        <h2>What You'll Find Here</h2>
+        <p>Our website provides:</p>
+        <ul>
+            <li>Information on planets in our solar system</li>
+            <a href="infoplanets.html"><strong> Click here</strong></a>
+            <li>Wanna test your knowledge about our solar system. Solve the test below:</li>
+            <a href="astroquiz.html"><strong> Take your astronomy Quiz</strong></a>
+        </ul>
+    </div>
+
+       
+    </div>
+</body>
+</html>

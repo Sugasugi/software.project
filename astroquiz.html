@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            background-image: url('background.jpg');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .quiz-container {
+            background-color: #8B5FBF; /* Purple background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .question {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .option {
+            background-color: #AC78D1; /* Lighter purple */
+            color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .option:hover {
+            background-color: #936BBF; /* Darker purple on hover */
+        }
+
+        button {
+            background-color: #5E357F; /* Dark purple for the button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .result {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <header>
+            <h1>Astronomy Quiz</h1>
+            <p>Test your knowledge about the universe!</p>
+        </header>
+
+        <div class="question" id="question"></div>
+        <ul class="options" id="options"></ul>
+        <button onclick="checkAnswer()">Next Question</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the largest planet in our solar system?",
+                options: ["Earth", "Mars", "Jupiter", "Venus"],
+                correctAnswer: "Jupiter"
+            },
+            {
+                question: "Which planet is known as the 'Red Planet'?",
+                options: ["Mars", "Venus", "Jupiter", "Saturn"],
+                correctAnswer: "Mars"
+            },
+            {
+                question: "How many moons does Earth have?",
+                options: ["1", "2", "0", "4"],
+                correctAnswer: "1"
+            },
+            {
+                question: "Which planet is known for its prominent ring system?",
+                options: ["Earth", "Mars", "Saturn", "Jupiter"],
+                correctAnswer: "Saturn"
+            },
+            {
+                question: "What is the smallest planet in our solar system?",
+                options: ["Mars", "Venus", "Earth", "Mercury"],
+                correctAnswer: "Mercury"
+            },
+            {
+                question: "Which planet is known as the 'Blue Planet'?",
+                options: ["Neptune", "Uranus", "Earth", "Venus"],
+                correctAnswer: "Earth"
+            },
+            {
+                question: "How many planets are there in our solar system?",
+                options: ["8", "9", "10", "7"],
+                correctAnswer: "8"
+            },
+            {
+                question: "Which planet is known as the 'Giant of the Solar System'?",
+                options: ["Jupiter", "Mars", "Venus", "Uranus"],
+                correctAnswer: "Jupiter"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        const questionElement = document.getElementById("question");
+        const optionsElement = document.getElementById("options");
+        const resultElement = document.getElementById("result");
+
+        function displayQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            questionElement.textContent = currentQuestion.question;
+
+            optionsElement.innerHTML = "";
+            currentQuestion.options.forEach((option, index) => {
+                const li = document.createElement("li");
+                li.className = "option";
+                li.textContent = option;
+                li.onclick = () => selectAnswer(index);
+                optionsElement.appendChild(li);
+            });
+        }
+
+        function selectAnswer(index) {
+            const selectedOption = questions[currentQuestionIndex].options[index];
+            const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+            if (selectedOption === correctAnswer) {
+                resultElement.textContent = "Correct!";
+                resultElement.style.color = "#5E357F"; /* Dark purple */
+            } else {
+                resultElement.textContent = `Incorrect. The correct answer is: ${correctAnswer}`;
+                resultElement.style.color = "#FF0000";
+            }
+
+            resultElement.style.display = "block";
+        }
+
+        function checkAnswer() {
+            resultElement.textContent = "";
+            resultElement.style.display = "none";
+
+            currentQuestionIndex++;
+
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                resultElement.textContent = "Quiz completed!";
+                resultElement.style.display = "block";
+            }
+        }
+
+        displayQuestion();
+    </script>
+</body>
+</html>
